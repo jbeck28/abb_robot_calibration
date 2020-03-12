@@ -3,11 +3,11 @@
 
   <rosparam command="delete" param="robot_calibration" />
   <node pkg="robot_calibration" type="calibrate" name="robot_calibration"
-        args="$(find robot_calibration)/test/beck_tests/calibration_poses2.bag"
+        args="$(find abb_robot_calibration)/config/calibration_poses2.bag"
         output="screen" required="true">
     <param name= "velocity_factor" value="$(arg velocity_factor)" />
-    <rosparam file="$(find robot_calibration)/test/beck_tests/chain_manager_irb1200.yaml" command="load"/>
-    <rosparam file="$(find robot_calibration)/test/beck_tests/error_block_irb1200_chuck.yaml" command="load"/>
+    <rosparam file="$(find abb_robot_calibration)/config/chain_manager_irb1200.yaml" command="load"/>
+    <rosparam file="$(find abb_robot_calibration)/config/error_block_irb1200_chuck.yaml" command="load"/>
     <param name="camera_info_topic" value="/camera/depth/camera_info"/>
   </node>
 
